@@ -5,6 +5,7 @@ module.exports = (grunt)->
       'publish':
         options:
           join: true
+          bare: true
         files:
           'dist/uri.js': ['src/uri.coffee']
     karma:
