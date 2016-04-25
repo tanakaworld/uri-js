@@ -19,6 +19,6 @@ class CXUri
     for i,str of strs
       pair = str.split("=")
       break if pair.length != 2
-      params[pair[0]] = decodeURIComponent(pair[1])
+      params[pair[0]] = pair[1]
 
     return params

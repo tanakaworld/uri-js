@@ -41,7 +41,7 @@ CXUri = (function() {
       if (pair.length !== 2) {
         break;
       }
-      params[pair[0]] = decodeURIComponent(pair[1]);
+      params[pair[0]] = pair[1];
     }
     return params;
   };
