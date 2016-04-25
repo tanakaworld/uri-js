@@ -1,0 +1,93 @@
+.container {
+    padding: 12px;
+}
+
+.input-group {
+    display: block;
+    margin: 12px;
+    height: 44px;
+    position: relative;
+}
+
+input[type=text] {
+    -webkit-appearance: none;
+    border: 0;
+    outline: 0;
+    padding: 2px 0;
+    height: 24px;
+    font-size: 16px;
+    color: black;
+    box-sizing: border-box;
+}
+
+input[type=text]:focus {
+    border-bottom: solid 1px #2795E9;
+}
+
+label {
+    font-size: 16px;
+    color: gray;
+}
+
+button {
+    -webkit-appearance: none;
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+    font-size: 12px;
+}
+
+button:hover {
+    color: #2795E9;
+}
+
+.input-uri {
+    width: 95%;
+
+    position: absolute;
+    top: 6px;
+    left: 36px;
+}
+
+.input-host, .input-path {
+    width: 100%;
+}
+
+.input-query-key {
+    float: left;
+    width: 30%;
+}
+
+.input-query-value {
+    float: left;
+    margin-left: 8px;
+    margin-right: 12px;
+    width: 50%;
+    overflow: hidden;
+}
+
+.parse-btn {
+    width: 24px;
+    height: 24px;
+    border-radius: 12px 12px;
+    position: absolute;
+    top: 6px;
+    left: 0;
+}
+
+.input-wrap {
+    height: 20px;
+    margin-top: 6px;
+}
+
+.query-param-input-wrap {
+    position: relative;
+}
+
+.actions {
+    position: absolute;
+    display: inline;
+    top: 0;
+    right: 0;
+}

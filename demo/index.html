@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja" ng-app="uriJsParser">
+<head>
+    <meta charset="UTF-8">
+    <title>uri-js | parser</title>
+
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"-->
+    <!--integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">-->
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"-->
+    <!--integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+    <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"-->
+    <!--integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"-->
+    <!--crossorigin="anonymous"></script>-->
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.js"></script>
+
+    <script type="text/javascript" src="../dist/uri.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+</head>
+<body>
+
+<div class="container" ng-controller="MainController as vm">
+    <h1>URI-JS Parser</h1>
+
+    <hr>
+
+    <div class="input-group">
+        <button class="parse-btn" ng-click="vm.parse()">
+            <i class="fa" ng-class="vm.detailShow ? 'fa-chevron-down' : 'fa-chevron-right'" aria-hidden="true"></i>
+        </button>
+        <input type="text" class="input-uri" placeholder="http://xxxxx.com" ng-model="vm.uriInput">
+        <span class="bar"></span>
+    </div>
+
+    <div ng-show="vm.detailShow">
+        <div class="input-group">
+            <label>Host</label>
+            <div class="input-wrap">
+                <input type="text" class="input-host" ng-model="vm.host" value="{{vm.host}}" placeholder="Host">
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label>Path</label>
+            <div class="input-wrap">
+                <input type="text" class="input-path" ng-model="vm.path" value="{{vm.path}}" placeholder="Path">
+            </div>
+        </div>
+
+        <div class="input-group">
+            <label>Query parameters</label>
+            <button ng-click="vm.addQueryParam()">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+            </button>
+            <div ng-repeat="q in vm.queries">
+                <div class="input-wrap query-param-input-wrap">
+                    <input type="text" class="input-query-key" ng-model="q.k" value="{{q.k}}" placeholder="Param key">
+                    <input type="text" class="input-query-value" ng-model="q.v" value="{{q.v}}" placeholder="Param value">
+                    <div class="actions">
+                        <button ng-click="vm.encParam(q)">enc</button>
+                        <button ng-click="vm.decParam(q)">dec</button>
+                        <button ng-click="vm.deleteQueryParam($index)">
+                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
