@@ -23,9 +23,17 @@
 <body>
 
 <div class="container" ng-controller="MainController as vm">
-    <h1>URI-JS Parser</h1>
-
-    <hr>
+    <header>
+        <h1>
+            URI-JS Parser
+            <small class="copy">
+                ©
+                <a target="_blank" href="https://github.com/tanakaworld/uri-js">uri-js</a>
+                is maintained by
+                <a target="_blank" href="http://twitter.com/_tanakaworld">_tanakaworld</a>
+            </small>
+        </h1>
+    </header>
 
     <div class="input-group">
         <button class="parse-btn" ng-click="vm.parse()">
@@ -58,7 +66,8 @@
             <div ng-repeat="q in vm.queries">
                 <div class="input-wrap query-param-input-wrap">
                     <input type="text" class="input-query-key" ng-model="q.k" value="{{q.k}}" placeholder="Param key">
-                    <input type="text" class="input-query-value" ng-model="q.v" value="{{q.v}}" placeholder="Param value">
+                    <input type="text" class="input-query-value" ng-model="q.v" value="{{q.v}}"
+                           placeholder="Param value">
                     <div class="actions">
                         <button ng-click="vm.encParam(q)">enc</button>
                         <button ng-click="vm.decParam(q)">dec</button>

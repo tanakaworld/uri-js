@@ -2,11 +2,21 @@
     padding: 12px;
 }
 
+header {
+    height: 20px;
+    border-bottom: 1px solid gray;
+}
+
 .input-group {
     display: block;
     margin: 12px;
     height: 44px;
     position: relative;
+}
+
+.copy {
+    font-size: 10px;
+    float: right;
 }
 
 input[type=text] {
